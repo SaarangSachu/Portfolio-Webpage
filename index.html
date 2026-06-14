@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saarang R B — Portfolio</title>
+  <meta name="description"
+    content="Portfolio of Saarang R B, Computer Science graduate passionate about building scalable, production-ready software. Linux sysadmin and tech creator.">
+  <meta name="keywords"
+    content="Saarang R B, Software Engineer, Portfolio, Computer Science, Arch Linux, React, FastAPI, Python">
+  <meta name="author" content="Saarang R B">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css?v=1.3">
+</head>
+
+<body class="dark-theme">
+  <!-- Glowing background patterns for premium tech aesthetic -->
+  <div class="glow-orb orb-1" aria-hidden="true"></div>
+  <div class="glow-orb orb-2" aria-hidden="true"></div>
+  <div class="glow-orb orb-3" aria-hidden="true"></div>
+
+  <!-- Header Navigation -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <span class="logo-accent">saarang</span><span class="logo-white">@portfolio</span><span
+          class="logo-symbol">:~#</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle-btn" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#skills" class="nav-link">./skills.json</a>
+        <a href="#projects" class="nav-link">./projects.py</a>
+        <a href="#experience" class="nav-link">./experience.md</a>
+        <a href="#contact" class="nav-link nav-btn">./contact.sh</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Section 1: Hero / Landing -->
+  <section class="hero-section" id="home">
+    <div class="hero-container">
+      <div class="hero-content-wrapper">
+        <!-- Profile Picture Window -->
+        <div class="profile-window reveal-left">
+          <div class="terminal-header">
+            <div class="terminal-buttons">
+              <span class="btn-close"></span>
+              <span class="btn-minimize"></span>
+              <span class="btn-maximize"></span>
+            </div>
+            <div class="terminal-title">view - profile.png</div>
+          </div>
+          <div class="profile-body">
+            <img src="profile.png" alt="Saarang R B" class="profile-image">
+          </div>
+        </div>
+
+        <!-- Terminal Window -->
+        <div class="terminal-mock reveal-right">
+          <div class="terminal-header">
+            <div class="terminal-buttons">
+              <span class="btn-close"></span>
+              <span class="btn-minimize"></span>
+              <span class="btn-maximize"></span>
+            </div>
+            <div class="terminal-title">bash - saarang@portfolio:~</div>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-line">
+              <span class="prompt-user">saarang@portfolio</span><span class="prompt-colon">:</span><span
+                class="prompt-dir">~</span><span class="prompt-symbol">$</span> <span class="typed-text"
+                id="typed-name"></span><span class="cursor-blink">_</span>
+            </div>
+            <div class="tagline-container fade-in-element">
+              <h2 class="hero-tagline">
+                Computer Science graduate passionate about building <span class="accent-cyan">scalable</span>, <span
+                  class="accent-magenta">production-ready</span> software.
+              </h2>
+            </div>
+            <div class="cta-container fade-in-element">
+              <a href="#projects" class="cta-button primary-btn">
+                <span class="btn-text">View Projects</span>
+                <svg class="btn-icon" viewBox="0 0 24 24" width="18" height="18">
+                  <path fill="currentColor" d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+                </svg>
+              </a>
+              <a href="#contact" class="cta-button secondary-btn">
+                <span class="btn-text">Contact Me</span>
+                <svg class="btn-icon" viewBox="0 0 24 24" width="18" height="18">
+                  <path fill="currentColor"
+                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-down">
+      <a href="#skills" aria-label="Scroll down">
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
+        <div class="arrows">
+          <span></span>
+          <span></span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Section 3: Technical Skills (Terminal Style) -->
+  <section class="section skills-section" id="skills">
+    <div class="section-container">
+      <h2 class="section-title code-font"><span class="accent-magenta">vi</span> skills.json</h2>
+
+      <div class="ide-container reveal-up">
+        <!-- IDE Window header and sidebar -->
+        <div class="ide-window">
+          <div class="ide-header">
+            <div class="terminal-buttons">
+              <span class="btn-close"></span>
+              <span class="btn-minimize"></span>
+              <span class="btn-maximize"></span>
+            </div>
+            <div class="ide-tabs-wrapper">
+              <div class="ide-tab active-tab code-font" id="tab-json">skills.json</div>
+              <div class="ide-tab code-font" id="tab-bash">environment.env</div>
+            </div>
+          </div>
+
+          <div class="ide-editor-area">
+            <!-- File Explorer sidebar (collapsible/interactive) -->
+            <div class="ide-sidebar code-font">
+              <div class="sidebar-header">EXPLORER</div>
+              <div class="sidebar-folder open">
+                <span class="folder-icon">📂</span> portfolio-v2
+                <div class="sidebar-files">
+                  <div class="sidebar-file active" id="file-json">
+                    <span class="file-icon accent-yellow">⎔</span> skills.json
+                  </div>
+                  <div class="sidebar-file" id="file-bash">
+                    <span class="file-icon accent-cyan">⚙</span> environment.env
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Editor Text content -->
+            <div class="ide-code-view code-font">
+              <!-- JSON skills content -->
+              <div class="code-editor-content" id="code-content-json">
+                <div class="code-line"><span class="line-num">1</span><span class="bracket-yellow">{</span></div>
+                <div class="code-line"><span class="line-num">2</span> <span class="json-key">"Languages"</span>: <span
+                    class="bracket-magenta">[</span></div>
+                <div class="code-line"><span class="line-num">3</span> <span class="json-val">"Python"</span>, <span
+                    class="json-comment">// Core backend, AI prototyping</span></div>
+                <div class="code-line"><span class="line-num">4</span> <span class="json-val">"C"</span>, <span
+                    class="json-comment">// Problem solving & systems logic</span></div>
+                <div class="code-line"><span class="line-num">5</span> <span class="json-val">"JavaScript"</span>, <span
+                    class="json-comment">// High-performance interactive UI</span></div>
+                <div class="code-line"><span class="line-num">6</span> <span class="json-val">"HTML"</span>,</div>
+                <div class="code-line"><span class="line-num">7</span> <span class="json-val">"CSS"</span>,</div>
+                <div class="code-line"><span class="line-num">8</span> <span class="json-val">"SQL"</span> <span
+                    class="json-comment">// Advanced querying and optimization</span></div>
+                <div class="code-line"><span class="line-num">9</span> <span class="bracket-magenta">]</span>,</div>
+                <div class="code-line"><span class="line-num">10</span> <span
+                    class="json-key">"Frameworks_&_Tools"</span>: <span class="bracket-magenta">[</span></div>
+                <div class="code-line"><span class="line-num">11</span> <span class="json-val">"React"</span>, <span
+                    class="json-comment">// Dynamic single page UI development</span></div>
+                <div class="code-line"><span class="line-num">12</span> <span class="json-val">"FastAPI"</span>, <span
+                    class="json-comment">// Asynchronous python APIs</span></div>
+                <div class="code-line"><span class="line-num">13</span> <span class="json-val">"MySQL"</span>, <span
+                    class="json-comment">// Relational database design & views</span></div>
+                <div class="code-line"><span class="line-num">14</span> <span class="json-val">"Generative AI / Gemini
+                    API"</span>, <span class="json-comment">// LLM integration</span></div>
+                <div class="code-line"><span class="line-num">15</span> <span class="json-val">"Power BI"</span> <span
+                    class="json-comment">// Interactive reporting dashboards</span></div>
+                <div class="code-line"><span class="line-num">16</span> <span class="bracket-magenta">]</span></div>
+                <div class="code-line"><span class="line-num">17</span><span class="bracket-yellow">}</span></div>
+              </div>
+
+              <!-- Env content (alternate view) -->
+              <div class="code-editor-content hidden" id="code-content-bash">
+                <div class="code-line"><span class="line-num">1</span><span class="bash-comment"># System Administration
+                    Profile</span></div>
+                <div class="code-line"><span class="line-num">2</span><span class="bash-key">EXPORT</span> <span
+                    class="bash-var">USER</span>=<span class="json-val">"saarang"</span></div>
+                <div class="code-line"><span class="line-num">3</span><span class="bash-key">EXPORT</span> <span
+                    class="bash-var">HOST</span>=<span class="json-val">"pec.edu"</span></div>
+                <div class="code-line"><span class="line-num">4</span><span class="bash-key">EXPORT</span> <span
+                    class="bash-var">SHELL</span>=<span class="json-val">"/bin/zsh"</span></div>
+                <div class="code-line"><span class="line-num">5</span><span class="bash-key">EXPORT</span> <span
+                    class="bash-var">OS_FLAVOR</span>=<span class="json-val">"ArchLinux_LTS"</span></div>
+                <div class="code-line"><span class="line-num">6</span><span class="bash-key">EXPORT</span> <span
+                    class="bash-var">CURRENT_PATH</span>=<span class="json-val">"/home/saarang/dev/portfolio"</span>
+                </div>
+                <div class="code-line"><span class="line-num">7</span></div>
+                <div class="code-line"><span class="line-num">8</span><span class="bash-comment"># Server setups
+                    managed</span></div>
+                <div class="code-line"><span class="line-num">9</span><span class="bash-var">DEPLOYS</span>=<span
+                    class="bracket-magenta">(</span><span class="json-val">"Ubuntu Server"</span> <span
+                    class="json-val">"FastAPI Backend"</span> <span class="json-val">"MySQL Database"</span> <span
+                    class="json-val">"Uvicorn Node"</span><span class="bracket-magenta">)</span></div>
+                <div class="code-line"><span class="line-num">10</span><span class="bash-var">YOUTUBE_TAG</span>=<span
+                    class="json-val">"saarangsachu"</span></div>
+                <div class="code-line"><span class="line-num">11</span></div>
+                <div class="code-line"><span class="line-num">12</span><span class="bash-comment"># Run bash
+                    verification script to boot services:</span></div>
+                <div class="code-line"><span class="line-num">13</span><span class="bash-key">alias</span> <span
+                    class="bash-var">run_tests</span>=<span class="json-val">"pytest tests/ && npm run test"</span>
+                </div>
+                <div class="code-line"><span class="line-num">14</span><span class="bash-key">alias</span> <span
+                    class="bash-var">deploy_production</span>=<span class="json-val">"git push origin production && pm2
+                    restart all"</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skill IDE Footer status bar -->
+          <div class="ide-footer code-font">
+            <span class="footer-branch"> main</span>
+            <span class="footer-sync">⟳ Syncing...</span>
+            <span class="footer-right">UTF-8 &nbsp;&nbsp;&nbsp; JSON &nbsp;&nbsp;&nbsp; Line 1, Col 1</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Featured Projects -->
+  <section class="section projects-section" id="projects">
+    <div class="section-container">
+      <h2 class="section-title code-font"><span class="accent-magenta">ls</span> projects/</h2>
+
+      <div class="projects-grid">
+        <!-- Project Card 1 -->
+        <div class="project-card reveal-up">
+          <div class="card-glow-element" aria-hidden="true"></div>
+          <div class="project-header">
+            <div class="folder-icon-svg">
+              <svg viewBox="0 0 24 24" width="24" height="24">
+                <path fill="currentColor"
+                  d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0-2-.9-2-2V5c0-1.1-.9-2-2-2zM9 17v-6h2v6H9zm4 0v-8h2v8h-2zm4 0h-2V7h2v10z" />
+              </svg>
+            </div>
+            <div class="project-links">
+              <span class="terminal-badge accent-cyan code-font">Gemini API</span>
+            </div>
+          </div>
+          <h3 class="project-title code-font">Prompt Optimization AI Tool</h3>
+          <p class="project-desc">
+            An end-to-end platform utilizing React, FastAPI, and the Gemini API to systematically refine,
+            version-control, and benchmark generative AI prompts with an LLM-as-a-judge framework.
+          </p>
+          <div class="project-tech-stack code-font">
+            <span>React</span>
+            <span>FastAPI</span>
+            <span>Gemini API</span>
+            <span>LLM-as-a-judge</span>
+          </div>
+        </div>
+
+        <!-- Project Card 2 -->
+        <div class="project-card reveal-up" style="transition-delay: 0.1s;">
+          <div class="card-glow-element" aria-hidden="true"></div>
+          <div class="project-header">
+            <div class="folder-icon-svg">
+              <svg viewBox="0 0 24 24" width="24" height="24">
+                <path fill="currentColor"
+                  d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z" />
+              </svg>
+            </div>
+            <div class="project-links">
+              <span class="terminal-badge accent-magenta code-font">Full Stack</span>
+            </div>
+          </div>
+          <h3 class="project-title code-font">Canteen Automation System</h3>
+          <p class="project-desc">
+            A full-stack web platform using Python, JS, and MySQL for dynamic inventory management, asynchronous
+            real-time queue views, and concurrent transaction logging.
+          </p>
+          <div class="project-tech-stack code-font">
+            <span>Python</span>
+            <span>JavaScript</span>
+            <span>MySQL</span>
+            <span>Async Queue</span>
+          </div>
+        </div>
+
+        <!-- Project Card 3 -->
+        <div class="project-card reveal-up" style="transition-delay: 0.2s;">
+          <div class="card-glow-element" aria-hidden="true"></div>
+          <div class="project-header">
+            <div class="folder-icon-svg">
+              <svg viewBox="0 0 24 24" width="24" height="24">
+                <path fill="currentColor"
+                  d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+              </svg>
+            </div>
+            <div class="project-links">
+              <span class="terminal-badge accent-yellow code-font">AI & Prototyping</span>
+            </div>
+          </div>
+          <h3 class="project-title code-font">QuestLog & AI Resume</h3>
+          <p class="project-desc">
+            Python and React-based applications highlighting rapid prototyping, parsing, intelligence matching, and
+            third-party API integration skills.
+          </p>
+          <div class="project-tech-stack code-font">
+            <span>Python</span>
+            <span>React</span>
+            <span>AI Parser</span>
+            <span>Rapid Proto</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Experience & Leadership -->
+  <section class="section experience-section" id="experience">
+    <div class="section-container">
+      <h2 class="section-title code-font"><span class="accent-magenta">history</span> | grep role</h2>
+
+      <div class="timeline-container">
+        <div class="timeline-line-element"></div>
+
+        <!-- Timeline Item 1 -->
+        <div class="timeline-item reveal-left">
+          <div class="timeline-badge">
+            <span class="badge-glow"></span>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-date code-font accent-cyan">April 2025 - March 2026</div>
+            <h3 class="timeline-title code-font">Chairperson</h3>
+            <h4 class="timeline-subtitle code-font">Computer Society of India (CSI), PEC</h4>
+            <ul class="timeline-details">
+              <li>Led university-wide technical initiatives, mentoring 100+ students on modern stack deployment and
+                software structures.</li>
+              <li>Organized high-visibility college-level hackathons and technical events.</li>
+              <li>Directed AI workshops introducing students to API integration, Large Language Models, and prompting
+                patterns.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Timeline Item 2 -->
+        <div class="timeline-item reveal-right">
+          <div class="timeline-badge">
+            <span class="badge-glow"></span>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-date code-font accent-magenta">July 2024 - August 2024</div>
+            <h3 class="timeline-title code-font">Web Development Intern</h3>
+            <h4 class="timeline-subtitle code-font">Corizo</h4>
+            <ul class="timeline-details">
+              <li>Developed dynamic frontends and integrations as part of an agile software workflow.</li>
+              <li>Gained hands-on experience debugging full-stack web environments and database connections.</li>
+              <li>Collaborated on refactoring interfaces for enhanced visual response and responsiveness.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Footer & Contact -->
+  <footer class="section contact-section" id="contact">
+    <div class="section-container">
+      <h2 class="section-title code-font"><span class="accent-magenta">ssh</span> guest@saarang-r-b</h2>
+
+      <div class="terminal-dashboard reveal-up">
+        <div class="dashboard-header">
+          <div class="terminal-buttons">
+            <span class="btn-close"></span>
+            <span class="btn-minimize"></span>
+            <span class="btn-maximize"></span>
+          </div>
+          <span class="dashboard-title code-font">console - guest@saarang-r-b:~</span>
+        </div>
+
+        <div class="dashboard-body">
+          <div class="contact-grid">
+
+            <!-- Scripts and Executables list -->
+            <div class="console-scripts">
+              <h3 class="dashboard-subtitle code-font">/usr/bin/socials</h3>
+              <div class="scripts-list code-font">
+                <button class="script-btn" id="run-github-btn" data-url="https://github.com/saarang-r-b"
+                  data-script="./github.sh">
+                  <span class="script-status accent-cyan">executable</span> ./github.sh
+                </button>
+                <button class="script-btn" id="run-linkedin-btn" data-url="https://linkedin.com/in/saarang-r-b"
+                  data-script="./linkedin.sh">
+                  <span class="script-status accent-magenta">executable</span> ./linkedin.sh
+                </button>
+                <button class="script-btn" id="run-youtube-btn" data-url="https://www.youtube.com/@saarangsachu"
+                  data-script="./youtube.sh">
+                  <span class="script-status accent-yellow">executable</span> ./youtube.sh
+                </button>
+                <button class="script-btn" id="run-resume-btn" data-url="https://drive.google.com/file/d/14vYyJJ04ViVbeP8cC54-v0d_p71CCpua/view?usp=sharing"
+                  data-script="./resume.sh">
+                  <span class="script-status accent-green">executable</span> ./resume.sh
+                </button>
+              </div>
+            </div>
+
+            <!-- Contact outputs & clipboard area -->
+            <div class="console-io">
+              <h3 class="dashboard-subtitle code-font">env | grep CONTACT</h3>
+              <div class="io-list code-font">
+                <div class="io-item">
+                  <span class="io-key">EMAIL</span>=
+                  <button class="io-val-copy" id="copy-email-btn" data-clipboard="ssaarangsachu@gmail.com"
+                    title="Click to copy email">
+                    <span class="copy-val">ssaarangsachu@gmail.com</span>
+                    <span class="copy-badge">copy</span>
+                  </button>
+                </div>
+                <div class="io-item">
+                  <span class="io-key">PHONE</span>=
+                  <button class="io-val-copy" id="copy-phone-btn" data-clipboard="+91 8075109686"
+                    title="Click to copy phone">
+                    <span class="copy-val">+91 8075109686</span>
+                    <span class="copy-badge">copy</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Sim Output window where logs print -->
+              <div class="cli-simulator" id="cli-output-window">
+                <div class="cli-row"><span class="cli-user">guest@saarang</span>:<span class="cli-dir">~</span>$ <span
+                    id="current-typing-command"></span></div>
+                <div class="cli-log" id="cli-sim-log">System initialized. Awaiting commands...</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom code-font">
+        <p>© 2026 Saarang R B. Built with vanilla HTML/CSS/JS. <span class="accent-cyan">uptime: 100%</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Notification banner for copied actions -->
+  <div class="copied-toast" id="copied-toast">Copied to Clipboard!</div>
+
+  <script src="script.js?v=1.3"></script>
+</body>
+
+</html>
