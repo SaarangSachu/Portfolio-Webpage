@@ -249,4 +249,151 @@ document.addEventListener('DOMContentLoaded', () => {
   copyPhoneBtn.addEventListener('click', () => {
     handleCopy(copyPhoneBtn, copyPhoneBtn.getAttribute('data-clipboard'));
   });
+
+  // ==========================================
+  // 9. Starry Canvas Background
+  // ==========================================
+  const canvas = document.getElementById('starry-canvas');
+  const ctx = canvas.getContext('2d');
+
+  let stars = [];
+  let shootingStars = [];
+  let width = window.innerWidth;
+  let height = window.innerHeight;
+
+  // Star density based on screen size
+  let starCount = Math.min(150, Math.floor((width * height) / 8000));
+
+  function resizeCanvas() {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+    starCount = Math.min(150, Math.floor((width * height) / 8000));
+    initStars();
+  }
+
+  class Star {
+    constructor() {
+      this.reset();
+      this.y = Math.random() * height; // Distribute vertically initially
+    }
+
+    reset() {
+      this.x = Math.random() * width;
+      this.y = 0;
+      this.size = Math.random() * 1.5 + 0.5; // size between 0.5px and 2px
+      this.baseOpacity = Math.random() * 0.7 + 0.3; // opacity between 0.3 and 1.0
+      this.opacity = this.baseOpacity;
+      this.twinklePhase = Math.random() * Math.PI * 2;
+      this.twinkleSpeed = Math.random() * 0.03 + 0.01;
+    }
+
+    update() {
+      this.twinklePhase += this.twinkleSpeed;
+      // Opacity cycles up and down to simulate twinkling
+      this.opacity = this.baseOpacity * (0.4 + 0.6 * Math.sin(this.twinklePhase));
+    }
+
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+      // Occasionally stars glow in cyan or magenta syntax highlights
+      if (this.baseOpacity > 0.85) {
+        if (this.x % 3 === 0) {
+          ctx.fillStyle = `rgba(0, 242, 254, ${this.opacity})`;
+        } else if (this.x % 3 === 1) {
+          ctx.fillStyle = `rgba(255, 0, 127, ${this.opacity})`;
+        }
+      }
+      ctx.fill();
+    }
+  }
+
+  class ShootingStar {
+    constructor() {
+      this.reset();
+    }
+
+    reset() {
+      this.active = false;
+      this.x = Math.random() * width;
+      this.y = Math.random() * (height * 0.5); // Upper half
+      this.length = Math.random() * 80 + 40;
+      this.speed = Math.random() * 12 + 8;
+      this.angle = Math.PI / 6 + (Math.random() * Math.PI / 12); // around 30 to 45 degrees down
+      this.dx = Math.cos(this.angle) * this.speed;
+      this.dy = Math.sin(this.angle) * this.speed;
+      this.opacity = 1.0;
+    }
+
+    trigger() {
+      this.reset();
+      this.active = true;
+    }
+
+    update() {
+      if (!this.active) return;
+      this.x += this.dx;
+      this.y += this.dy;
+      this.opacity -= 0.02; // Fade out quickly
+      if (this.opacity <= 0 || this.x > width || this.y > height) {
+        this.active = false;
+      }
+    }
+
+    draw() {
+      if (!this.active) return;
+      ctx.beginPath();
+      const grad = ctx.createLinearGradient(
+        this.x, this.y,
+        this.x - this.dx * 3, this.y - this.dy * 3
+      );
+      grad.addColorStop(0, `rgba(0, 242, 254, ${this.opacity})`);
+      grad.addColorStop(0.5, `rgba(255, 0, 127, ${this.opacity * 0.5})`);
+      grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      
+      ctx.strokeStyle = grad;
+      ctx.lineWidth = 1.5;
+      ctx.moveTo(this.x, this.y);
+      ctx.lineTo(this.x - this.dx * 2, this.y - this.dy * 2);
+      ctx.stroke();
+    }
+  }
+
+  function initStars() {
+    stars = [];
+    for (let i = 0; i < starCount; i++) {
+      stars.push(new Star());
+    }
+    shootingStars = [new ShootingStar()];
+  }
+
+  function animateStars() {
+    ctx.clearRect(0, 0, width, height);
+
+    // Update & draw background stars
+    stars.forEach(star => {
+      star.update();
+      star.draw();
+    });
+
+    // Randomly trigger shooting star
+    if (Math.random() < 0.003 && !shootingStars[0].active) {
+      shootingStars[0].trigger();
+    }
+
+    // Update & draw shooting stars
+    shootingStars.forEach(sStar => {
+      sStar.update();
+      sStar.draw();
+    });
+
+    requestAnimationFrame(animateStars);
+  }
+
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+  animateStars();
 });
